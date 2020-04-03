@@ -1,101 +1,160 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Be Green</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"
-    />
-    <link href="stylesheets/style.css" rel="stylesheet" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Saira&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
-    />
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Be Green</title>
+<link
+rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"
+/>
+<link
+href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Saira&display=swap"
+rel="stylesheet"
+/>
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
+/>
 
-    <link
-      href="https://fonts.googleapis.com/css?family=Cardo:400,700|Oswald"
-      rel="stylesheet"
-    />
-    <script
-      defer
-      src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
-    ></script>
-    <link rel="shortcut icon" type="image/ico" href="img/favicon.ico" />
-  </head>
+<link
+href="https://fonts.googleapis.com/css?family=Cardo:400,700|Oswald"
+rel="stylesheet"
+/>
+<script
+defer
+src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
+></script>
+<link rel="shortcut icon" type="image/ico" href="img/favicon.ico" />
+<link href="../public/assets/css/indexstyle.css" rel="stylesheet" />
+<link href="../public/assets/css/materialize.css" rel="stylesheet" />
+<link href="../public/assets/css/materialize.min.css" rel="stylesheet" />
+</head>
+<body>
 
-  <body>
-    <section class="section">
-      <div class="container" style="margin-left: 375px">
-        <div class="card has-text-centered is-wide">
-          <div class="card-content">
-            <h1></h1>Be Green</h1>
+    <style>
+    body {background: url("../public/assets/images/forestlakebackground.jpg") no-repeat center center;
+        background-size: cover;
+        height: 790px;}
 
-            <h2>Sign Up Form</h2>
+    .card-content { background-color: rgba(109, 192, 109, 0.781);
+    width: 50%;
+    margin:0% 23%}
 
-            <form class="signup animated fadeIn delay-1s">
-              <div class="field">
-                <br />
-                <p class="control has-icons-left has-icons-right">
-                  <input
-                    class="input"
-                    type="email"
-                    placeholder="Email"
-                    id="email-input"
-                  />
-                  <span class="icon is-small is-left">
-                    <i class="fas fa-envelope"></i>
-                  </span>
-                  <span class="icon is-small is-right">
-                    <i class="fas fa-check"></i>
-                  </span>
-                </p>
-              </div>
-              <div class="field">
-                <p class="control has-icons-left">
-                  <input
-                    class="input"
-                    type="password"
-                    placeholder="Password"
-                    id="password-input"
-                  />
-                  <span class="icon is-small is-left">
-                    <i class="fas fa-lock"></i>
-                  </span>
-                </p>
-              </div>
-              <div class="field">
-                <p class="control">
-                  <button class="button is-info is-light" type="submit">
-                    Sign Up
-                  </button>
-                </p>
-              </div>
-              <div
-                style="display: none"
-                id="alert"
-                class="alert alert-danger"
-                role="alert"
-              >
-                <span
-                  class="glyphicon glyphicon-exclamation-sign"
-                  aria-hidden="true"
-                ></span>
-                <span class="sr-only">Error:</span> <span class="msg"></span>
-              </div>
-              <p>Or log in <a href="/login">here</a></p>
-            </form>
-          </div>
+     #email-input {
+         width: 360px;
+     }
+
+     #password-input {
+         width: 400px;
+     }
+
+     .footer-copyright {
+         background-color: rgba(0, 0, 255, 0.466);
+     }
+
+     
+    </style>
+
+
+
+
+
+
+
+<section class="section">
+<div class="container center">
+<div class="card has-text-centered is-wide card-content">
+<h1 class="go-green" style="color: rgb(8, 19, 9);">Be Green</h1>
+<br>
+   <img src="../public/assets/images/recyclelogo.jpg" width="100" height="100">
+
+<br>
+<br />
+<form class="login animated fadeIn delay-0.5s">
+<div class="field">
+If you have not registered, please do so now.
+<br />
+<p class="control has-icons-left has-icons-right">
+<input
+class="input"
+type="email"
+placeholder="Email"
+id="email-input"
+/>
+<span class="icon is-small is-left">
+<i class="fas fa-envelope"></i>
+</span>
+<span class="icon is-small is-right">
+<i class="fas fa-check"></i>
+</span>
+</p>
+</div>
+<div class="field">
+<p class="control has-icons-left">
+<input
+class="input"
+type="password"
+placeholder="Password"
+id="password-input"
+/>
+<span class="icon is-small is-left">
+<i class="fas fa-lock"></i>
+</span>
+</p>
+</div>
+<div class="field">
+<p class="control">
+<button class="button is-info is-light" type="submit">
+Register
+</button>
+</p>
+</div>
+<p>Or log in <a href="login.html">here</a></p>
+</form>
+<br />
+</div>
+</div>
+</div>
+</section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/login.js"></script>
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="../public/js/materialize.js"></script>
+  <script src="../public/js/init.js"></script>
+  <script src="../public/js/indexcript.js"></script>
+  <script src="http://vjs.zencdn.net/4.12/video.js"></script>
+
+
+</body>
+
+
+
+<footer class="page-footer" style="background-color: #03a8f4af">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">About Us</h5>
+          <p class="grey-text text-lighten-4">A group of conscious individuals looking to make it easier for each and every person do their part for a greener planet. Helping our planet can be difficult after all, but it's necessary to keep our home safe and healthy. So we're here to help.</p>
+
+
+        </div>
+     
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect with Us</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Email</a></li>
+            <li><a class="white-text" href="#!">Linkden</a></li>
+            <li><a class="white-text" href="#!">Instagram</a></li>
+            <li><a class="white-text" href="#!">Twitter</a></li>
+          </ul>
         </div>
       </div>
-    </section>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/signup.js"></script>
-  </body>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Created by <a class="orange-text text-lighten-3" href="">Be-Green</a>
+      </div>
+    </div>
+  </footer>
 </html>

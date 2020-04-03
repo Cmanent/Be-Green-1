@@ -1,55 +1,155 @@
-<div class="container">
-    <div class="row">
-        <div class="col s1"></div>
-        <div class="col s4">
-            <a href="/">
-                <h1 class="title">Be Green</h1>
-            </a>
-        </div>
-        <div class="col s2">
-            <i class="fas fa-leaf fa-4x"></i>
-        </div>
-        <div class="col s5"></div>
-    </div>
-    <br>
-    <div class="row">
-        <div class="col s3"></div>
-        <div class="col s6">
-            {{#if messages.error}}
-            <span class="fail">{{messages.error}}</span>
-            {{/if}}
-            <h6>Sign in with e-mail/password:</h6>
-            <form action="/login" method="POST">
-                <div>
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="email" required>
-                </div>
-                <div>
-                    <label for="password">Password</label>
-                    <input type="password" name="password" id="password" required>
-                </div><br>
-                <button type="submit" class="btn-flat green">Login</button> <a href="/register">Register</a>
-            </form>
-        </div>
-        <div class="col s3"></div>
-    </div>
+<style>
+  body {
+    background: url("/assets/images/forestlakebackground.jpg") no-repeat center center;
+    background-size: cover;
+    height: 790px;
+  }
 
-    <div class="row">
-        <div class="col s3"></div>
-        <div class="col s6">
-            <h6>Sign in with:</h6>
-            <a class="google-btn btn-flat green" href="/auth/google"><i class="fab fa-google fa-lg" id="test"></i></a>
-            <a class="facebook-btn btn-flat green" href="/auth/facebook"><i class="fab fa-facebook-f fa-lg"></i></a>
-            <a class="twitter-btn btn-flat green" href="/auth/twitter"><i class="fab fa-twitter fa-lg"></i></a>
-        </div>
-        <div class="col s3"></div>
-    </div>
+  .card-content {
+    background-color: rgba(109, 192, 109, 0.781);
+    width: 50%;
+    margin: 0% 23%
+  }
 
-    <ul id="slide-out" class="sidenav sidenav-fixed">
-        <i class="fas fa-recycle fa-3x"></i>
-        <li><a href="/map">Find a Recycling Center</a></li>
-        <i class="far fa-lightbulb fa-3x"></i>
-        <li><a href="/tips">Recycling Tips</a></li>
-    </ul>
-    <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-</div>
+  #email-input {
+    width: 360px;
+  }
+
+  #password-input {
+    width: 400px;
+  }
+
+  .footer-copyright {
+    background-color: rgba(0, 0, 255, 0.466);
+  }
+</style>
+
+
+
+
+
+
+
+<section class="section">
+  <div class="container center">
+    <div class="card has-text-centered is-wide card-content">
+      <h1 class="go-green" style="color: rgb(8, 19, 9);">Be Green</h1>
+      <br>
+      <img src="/assets/images/recyclelogo.jpg" width="100" height="100">
+
+      <br>
+      <br />
+      <form class="login animated fadeIn delay-0.5s">
+        <div class="field">
+          If you've been here before please log in, if not please sign up.
+          <br />
+          <p class="control has-icons-left has-icons-right">
+            <input class="input" type="email" placeholder="Email" id="email-input" />
+            <span class="icon is-small is-left">
+              <i class="fas fa-envelope"></i>
+            </span>
+            <span class="icon is-small is-right">
+              <i class="fas fa-check"></i>
+            </span>
+          </p>
+        </div>
+        <div class="field">
+          <p class="control has-icons-left">
+            <input class="input" type="password" placeholder="Password" id="password-input" />
+            <span class="icon is-small is-left">
+              <i class="fas fa-lock"></i>
+            </span>
+          </p>
+        </div>
+        <div class="field">
+          <p class="control">
+            <button class="button is-info is-light" type="submit">
+              Login
+            </button>
+          </p>
+        </div>
+        <p>Or sign up <a href="/signup">here</a></p>
+      </form>
+      <br />
+    </div>
+  </div>
+  </div>
+</section>
+</body>
+
+
+
+<footer class="page-footer" style="background-color: #03a8f4af">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">About Us</h5>
+        <p class="grey-text text-lighten-4">A group of conscious individuals looking to make it easier for each and
+          every person do their part for a greener planet. Helping our planet can be difficult after all, but it's
+          necessary to keep our home safe and healthy. So we're here to help.</p>
+
+
+      </div>
+
+      <div class="col l3 s12">
+        <h5 class="white-text">Connect with Us</h5>
+        <ul>
+          <li><a class="white-text" href="#!">Email</a></li>
+          <li><a class="white-text" href="#!">Linkden</a></li>
+          <li><a class="white-text" href="#!">Instagram</a></li>
+          <li><a class="white-text" href="#!">Twitter</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+      Created by <a class="orange-text text-lighten-3" href="">Be-Green</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+$(document).ready(function() {
+  // Getting references to our form and inputs
+  var loginForm = $("form.login");
+  var emailInput = $("input#email-input");
+  var passwordInput = $("input#password-input");
+
+  // When the form is submitted, we validate there's an email and password entered
+  loginForm.on("submit", function(event) {
+    event.preventDefault();
+    var userData = {
+      email: emailInput.val().trim(),
+      password: passwordInput.val().trim()
+    };
+
+    if (!userData.email || !userData.password) {
+      return;
+    }
+
+    // If we have an email and password we run the loginUser function and clear the form
+    loginUser(userData.email, userData.password);
+    emailInput.val("");
+    passwordInput.val("");
+  });
+
+  // loginUser does a post to our "api/login" route and if successful, redirects us the the members page
+  function loginUser(email, password) {
+    $.post("/api/login", {
+      email: email,
+      password: password
+    })
+      .then(function() {
+        window.location.replace("/members");
+        // If there's an error, log the error
+      })
+      .catch(function(err) {
+        console.log(err);
+      });
+  }
+});
+
+
+
+</script>

@@ -10,28 +10,32 @@ module.exports = function(app) {
     if (req.user) {
       res.redirect("/members");
     }
-    res.sendFile(path.join(__dirname, "../public/login.html"));
-  });
+  //   res.sendFile(path.join(__dirname, "../public/login.html"));
+res.redirect("/signup")
+   });
 
   app.get("/signup", function(req, res) {
     if (req.user) {
+      console.log("signup",req.user)
       res.redirect("/members");
     }
-    res.sendFile(path.join(__dirname, "../public/signup.html"));
+  // res.sendFile(path.join(__dirname, "../public/signup.html"));
+  res.render("signup")
   });
 
   app.get("/members", isAuthenticated, function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/members.html"));
+  //  res.sendFile(path.join(__dirname, "../public/members.html"));
+  res.render("members")
   });
 
-  // app.get("/itinerary", function(req, res) {
-  //   res.sendFile(path.join(__dirname, "../public/itinerary.html"));
-  // });
+  app.get("/maps", function(req, res) {
+    // res.sendFile(path.join(__dirname, "../public/members.html"));
+    res.render('maps');
+  });
+
 
   app.get("/login", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/login.html"));
+  //  res.sendFile(path.join(__dirname, "../public/login.html"));
+  res.render("login")
   });
 }
-  
-
-

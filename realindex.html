@@ -7,13 +7,13 @@
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="../public/assets/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="../public/assets/css/indexstyle.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="public/assets/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="public/assets/css/indexstyle.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="http://vjs.zencdn.net/4.12/video-js.css" rel="stylesheet">
 </head>
 <body>
   <nav class="light-green lighten-1" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo"><a href="#" class="brand-logo center"><img src="../public/assets/images/recyclelogo.jpg" width="60" height="60"></a>
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo"><a href="#" class="brand-logo center"><img src="public/assets/images/recyclelogo.jpg" width="60" height="60"></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="#"></a></li>
       </ul>
@@ -53,26 +53,52 @@
             <p class="light infocolumn p2">Recycling can be confusing. Can you recycle this or that? Where does it go? But there's no need to stress anymore. Get your answers here.</p>
           </div>
         
-            <ul id="navigation">
+            <ul id="navigation" class="infobtn">
                
                 <li><a href="#">Materials &raquo;</a>
                     <ul>
-                        <li><a href="#">Aluminum</a></li>
-                        <li><a href="#">Plastic</a></li>
-                        <li><a href="#">Other &raquo;</a>
+                      <li><a href="#">Aluminum &raquo;</a>
+                        <ul>
+                            <li><a href="#">Make sure that aluminum foil is clean before recycling. Burns and holes won’t affect the recycling, but remove any meats or sauces from the foil.
+                              <br><br>
+                              If recycling aluminum foil bought and used for storage, separate foil paperboard box and corrugated tube before recycling.
+                              <br><br>
+                              If foil is combined with other materials (such as in drink boxes, candy wrappers and yogurt tops) and can’t be separated, throw it away. Foil mixed with other materials is considered recycling contamination.
+                              <br><br>
+                              Combine all sheets of foil into one ball. This will keep the material easily separated from other products, and also prevent it from blowing away (aluminum foil is a very light material).</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Plastic: Bottes & Jugs &raquo;</a>
+                      <ul>
+                          <li><a href="#">
+                            Rinse your bottles and jugs before recycling. Remnants often contain sugar, which will attract insects and generate odors.
+                            <br><br>
+                           Check with local program whether to keep caps on the bottles, or not. Some want caps on to prevent caps from falling out during transportation. Others will have recycling machinery damaged when trying to crush a capped bottle.
+                           <br><br>
+                           Labels on bottles are OK, but unlikely to be recycled.
+                          </a></li>
+                      </ul>
+                  </li>
+                        <li><a href="#">Plastic: Bags &raquo;</a>
                             <ul>
-                                <li><a href="#">Other 1</a></li>
-                                <li><a href="#">Other 2</a></li>
-                                <li><a href="#">Other 3</a></li>
-                                <li><a href="#">Other 4</a></li>
+                                <li><a href="#">Remove anything inside the bags, such as receipts, stickers, or crumbs. All these items will contaminate your bag load.
+                                  <br><br>
+                                  Keep a bag collection bin in your house, such as one big garbage bag for all bags. Since they compact easily, you should be able to fit 50 to 100 plastic bags in one garbage bag.
+                                  <br><br>
+                                  Make sure any bags you are recycling have a #2 or #4 plastic symbol on them. If not, you can’t be sure what plastic resin the bag is made from, so you’ll want to reuse it instead, before eventually throwing it away.</a></li>
                             </ul>
                         </li>
-                
+                        <li><a href="#">Plastic: Wrap & Film &raquo;</a>
+                          <ul>
+                              <li><a href="#">Plastic wrap and film packaging are generally #2 and #4 plastic, both of which are recyclable. Most plastic bags are recycled into composite lumber, but can actually become a wide variety of products. 
+                              <br><br>
+                              Drop-off locations and curbside pick-up programs for these plastics are available all over the country.</a></li>
+                          </ul>
+                      </li>
                     </ul>
                 </li>
            
                 </li>
-                
        
             
         </div>
@@ -114,12 +140,12 @@
     <div class="container gallery" style="height:10%">
       <div class="mySlides">
         <div class="numbertext">1 / 6</div>
-        <img src="../public/assets/images/owlartcraft.jpg" style="width:60%">
+        <img src="public/assets/images/owlartcraft.jpg" style="width:60%">
       </div>
     
       <div class="mySlides">
         <div class="numbertext">2 / 6</div>
-        <img src="../public/assets/images/bottleholder.jpg" style="width:60%">
+        <img src="public/assets/images/bottleholder.jpg" style="width:60%">
       </div>
     
       <div class="mySlides">
@@ -151,10 +177,10 @@
     
       <div class="row">
         <div class="column">
-          <img class="demo cursor" src="../public/assets/images/owlartcraft.jpg" style="width:100%" onclick="currentSlide(1)" alt="Owl Decoration Project">
+          <img class="demo cursor" src="public/assets/images/owlartcraft.jpg" style="width:100%" onclick="currentSlide(1)" alt="Owl Decoration Project">
         </div>
         <div class="column">
-          <img class="demo cursor" src="../public/assets/images/bottleholder.jpg" style="width:100%" onclick="currentSlide(2)" alt="Pen Holder Project">
+          <img class="demo cursor" src="public/assets/images/bottleholder.jpg" style="width:100%" onclick="currentSlide(2)" alt="Pen Holder Project">
         </div>
         <div class="column">
           <img class="demo cursor" src="" style="width:100%" onclick="currentSlide(3)" alt="">
@@ -241,6 +267,6 @@
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
-  <script src="indexcript.js"></script>
+  <script src="js/indexscript.js"></script>
   <script src="http://vjs.zencdn.net/4.12/video.js"></script>
 </html>

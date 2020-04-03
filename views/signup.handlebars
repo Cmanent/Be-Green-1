@@ -1,46 +1,162 @@
-<div class="container">
-    <div class="row">
-        <div class="col s1"></div>
-        <div class="col s4">
-            <a href="/">
-                <a href="/">
-                    <h1 class="title">Be Green</h1>
-                </a>
-            </a>
+<style>
+  body {
+    background: url("/assets/images/forestlakebackground.jpg") no-repeat center center;
+    background-size: cover;
+    height: 790px;
+  }
+
+  .card-content {
+    background-color: rgba(109, 192, 109, 0.781);
+    width: 50%;
+    margin: 0% 23%
+  }
+
+  #email-input {
+    width: 360px;
+  }
+
+  #password-input {
+    width: 400px;
+  }
+
+  .footer-copyright {
+    background-color: rgba(0, 0, 255, 0.466);
+  }
+</style>
+
+
+
+
+
+
+
+<section class="section">
+  <div class="container center">
+    <div class="card has-text-centered is-wide card-content">
+      <h1 class="go-green" style="color: rgb(8, 19, 9);">Be Green</h1>
+      <br>
+      <img src="/assets/images/recyclelogo.jpg" width="100" height="100">
+
+      <br>
+      <br />
+      <form class="login animated fadeIn delay-0.5s">
+        <div class="field">
+          Register
+          <br />
+          <p class="control has-icons-left has-icons-right">
+            <input class="input" type="email" placeholder="Email" id="email-input" />
+            <span class="icon is-small is-left">
+              <i class="fas fa-envelope"></i>
+            </span>
+            <span class="icon is-small is-right">
+              <i class="fas fa-check"></i>
+            </span>
+          </p>
         </div>
-        <div class="col s2">
-            <i class="fas fa-leaf fa-4x"></i>
+        <div class="field">
+          <p class="control has-icons-left">
+            <input class="input" type="password" placeholder="Password" id="password-input" />
+            <span class="icon is-small is-left">
+              <i class="fas fa-lock"></i>
+            </span>
+          </p>
         </div>
-        <div class="col s5"></div>
+        <div class="field">
+          <p class="control">
+            <button id="registerUser" class="button is-info is-light">
+              Register
+            </button>
+          </p>
+        </div>
+        <p>Or login <a href="/login">here</a></p>
+      </form>
+      <br />
     </div>
-    <br>
+  </div>
+  </div>
+</section>
+
+
+
+
+
+
+<footer class="page-footer" style="background-color: #03a8f4af">
+  <div class="container">
     <div class="row">
-        <div class="col s3"></div>
-        <div class="col s6">
-            <form action="/register" method="POST">
-                <div>
-                    <label for="name">Name</label>
-                    <input type="text" name="name" id="name" required>
-                </div>
-                <div>
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="email" required>
-                </div>
-                <div>
-                    <label for="password">Password</label>
-                    <input type="password" name="password" id="password" required>
-                </div>
-                <button type="submit" class="btn-flat green">Register</button>
-            </form>
-            <a href="/">Back</a>
-        </div>
-        <div class="col s3"></div>
+      <div class="col l6 s12">
+        <h5 class="white-text">About Us</h5>
+        <p class="grey-text text-lighten-4">A group of conscious individuals looking to make it easier for each and
+          every person do their part for a greener planet. Helping our planet can be difficult after all, but it's
+          necessary to keep our home safe and healthy. So we're here to help.</p>
+
+
+      </div>
+
+      <div class="col l3 s12">
+        <h5 class="white-text">Connect with Us</h5>
+        <ul>
+          <li><a class="white-text" href="#!">Email</a></li>
+          <li><a class="white-text" href="#!">Linkden</a></li>
+          <li><a class="white-text" href="#!">Instagram</a></li>
+          <li><a class="white-text" href="#!">Twitter</a></li>
+        </ul>
+      </div>
     </div>
-    <ul id="slide-out" class="sidenav sidenav-fixed">
-        <i class="fas fa-recycle fa-3x"></i>
-        <li><a href="/map">Find a Recycling Center</a></li>
-        <i class="far fa-lightbulb fa-3x"></i>
-        <li><a href="/tips">Recycling Tips</a></li>
-    </ul>
-    <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-</div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+      Created by <a class="orange-text text-lighten-3" href="">Be-Green</a>
+    </div>
+  </div>
+</footer>
+
+<script>  
+
+$(document).ready(function() {
+  // Getting references to our form and input
+  var signUpForm = $("form.signup");
+  var emailInput = $("input#email-input");
+  var passwordInput = $("input#password-input");
+
+  // When the signup button is clicked, we validate the email and password are not blank
+  $("#registerUser").on("click", function(event) {
+    event.preventDefault();
+    console.log("register clicked: ", emailInput.val() )
+    var userData = {
+      email: emailInput.val().trim(),
+      password: passwordInput.val().trim()
+    };
+
+    if (!userData.email || !userData.password) {
+      return;
+    }
+    // If we have an email and password, run the signUpUser function
+    signUpUser(userData.email, userData.password);
+    emailInput.val("");
+    passwordInput.val("");
+  });
+
+  // Does a post to the signup route. If successful, we are redirected to the members page
+  // Otherwise we log any errors
+  function signUpUser(email, password) {
+    console.log("signup: ", email, password)
+    $.post("/api/signup", {
+      email: email,
+      password: password
+    })
+      .then(function(data) {
+        console.log(data);
+        window.location.replace("/members");
+        // If there's an error, handle it by throwing up a bootstrap alert
+      })
+     // .catch(handleLoginErr);
+  }
+
+  function handleLoginErr(err) {
+    $("#alert .msg").text(err.responseJSON);
+    $("#alert").fadeIn(500);
+  }
+});
+
+</script>

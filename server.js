@@ -8,6 +8,10 @@ const passport = require("./config/passport");
 //const path = require("path");
 //const exphbs = require("express-handlebars");
 // Setting up port and requiring models for syncing
+
+var exphbs = require("express-handlebars");
+
+
 const PORT = process.env.PORT || 8080;
 const db = require("./models");
 /* Added to test Association */
@@ -28,6 +32,8 @@ app.use(
 );
 app.use(passport.initialize());
 app.use(passport.session());
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 
 // Requiring our routes
 require("./routes/html-routes.js")(app);
